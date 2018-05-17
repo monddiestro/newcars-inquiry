@@ -4,10 +4,14 @@
  */
 class Inquiry extends CI_Controller
 {
-  // function __construct(argument)
-  // {
-  //   // code...
-  // }
+
+  function __construct()
+  {
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+    parent::__construct();
+  }
+  
   function push_data(){
 
     $lname = $this->input->post('lname');
