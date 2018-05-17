@@ -10,18 +10,18 @@ class Inquiry extends CI_Controller
   // }
   function push_data(){
 
-    $lname = $this->input->get('lname');
-    $fname = $this->input->get('fname');
-    $contact = $this->input->get('contact');
-    $eadd = $this->input->get('eadd');
-    $address = $this->input->get('address');
-    $message = $this->input->get('message');
-    $buy_range = $this->input->get('buy_range');
-    $bank_loan = $this->input->get('bank_loan');
-    $contact_alt = $this->input->get('contact_alt');
-    $time_call = $this->input->get('time_call');
-    $model = $this->input->get('model');
-    $source  = $this->input->get('source');
+    $lname = $this->input->post('lname');
+    $fname = $this->input->post('fname');
+    $contact = $this->input->post('contact');
+    $eadd = $this->input->post('eadd');
+    $address = $this->input->post('address');
+    $message = $this->input->post('message');
+    $buy_range = $this->input->post('buy_range');
+    $bank_loan = $this->input->post('bank_loan');
+    $contact_alt = $this->input->post('contact_alt');
+    $time_call = $this->input->post('time_call');
+    $model = $this->input->post('model');
+    $source  = $this->input->post('source');
 
     $data = array(
       'lname' => $lname,
