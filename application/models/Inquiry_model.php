@@ -10,7 +10,7 @@ class Inquiry_model extends CI_Model
     $this->db->select_max('inquiry_id','inquiry_id');
     $query = $this->db->get('inquiry_tbl');
     $row = $query->row();
-    return  $row->id;
+    return  $row->inquiry_id;
   }
 
 }
