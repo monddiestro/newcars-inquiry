@@ -11,7 +11,7 @@ class Inquiry extends CI_Controller
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     parent::__construct();
   }
-  
+
   function push_data(){
 
     $lname = $this->input->post('lname');
@@ -39,11 +39,21 @@ class Inquiry extends CI_Controller
       'contact_alt' => $contact_alt,
       'time_call' => $time_call,
       'model' => $model,
-      'source'  => $source
+      'source'  => $source,
+      'date' => date('Y-m-d H:i:s ')
     );
 
     $this->load->model('inquiry_model');
     echo $this->inquiry_model->push_to_db($data);
+
+  }
+
+  function pull_data() {
+
+    $this->load->model('inquiry_model');
+    $data["inquiries"] = $this->inquiry_model->pull_from_db();
+
+    $this->load->view('data',$data);
 
   }
 

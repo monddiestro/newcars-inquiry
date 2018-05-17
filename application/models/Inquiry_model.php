@@ -13,4 +13,9 @@ class Inquiry_model extends CI_Model
     return  $row->inquiry_id;
   }
 
+  function pull_from_db() {
+    $query = $this->db->get('inquiry_tbl');
+    return $query->result();
+  }
+
 }
