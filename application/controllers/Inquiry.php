@@ -53,7 +53,11 @@ class Inquiry extends CI_Controller
     $this->load->model('inquiry_model');
     $data["inquiries"] = $this->inquiry_model->pull_from_db();
 
+    $this->load->view('head');
+    $this->load->view('nav');
     $this->load->view('data',$data);
+    $this->load->view('script');
+    $this->load->view('footer');
 
   }
 
