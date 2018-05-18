@@ -61,4 +61,22 @@ class Inquiry extends CI_Controller
 
   }
 
+
+  function lead_details() {
+
+    $lead_id = $this->uri->segment(3);
+
+    $this->load->model('inquiry_model');
+    $data['details'] = $this->inquiry_model->pull_lead_details($lead_id);
+
+    $this->load->view('head');
+    $this->load->view('nav');
+    $this->load->view('details',$data);
+    $this->load->view('script');
+    $this->load->view('footer');
+
+
+
+  }
+
 }

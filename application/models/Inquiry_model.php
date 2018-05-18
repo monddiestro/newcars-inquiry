@@ -18,4 +18,10 @@ class Inquiry_model extends CI_Model
     return $query->result();
   }
 
+  function pull_lead_details($lead_id) {
+    $this->db->where('inquiry_id',$lead_id);
+    $query = $this->db->get('inquiry_tbl');
+    return $query->result();
+  }
+
 }

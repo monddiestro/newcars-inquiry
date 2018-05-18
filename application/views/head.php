@@ -3,6 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="../utilities/css/app.css">
+    <link rel="stylesheet" href="<?php echo base_url('utilities/css/app.css') ?>">
   </head>
   <body>
