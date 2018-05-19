@@ -9,7 +9,7 @@
             <th>Email</th>
             <th>Type</th>
             <th>Model & Variant</th>
-            <th>Lead Source</th>
+            <th>Price</th>
             <th>Date of Inquiry</th>
             <th></th>
           </tr>
