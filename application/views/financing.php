@@ -7,7 +7,7 @@
             <th>Name</th>
             <th>Contact</th>
             <th>Email</th>
-            <th>Best time to call</th>
+            <th>Type</th>
             <th>Model & Variant</th>
             <th>Lead Source</th>
             <th>Date of Inquiry</th>
@@ -25,7 +25,7 @@
             <td><?php echo $inquiry->price; ?></td>
             <td><?php echo $inquiry->date; ?></td>
             <td>
-              <a href="<?php echo base_url('inquiry/finance_details/'.$inquiry->inquiry_id) ?>" class="btn btn-success btn-block">VIEW DETAILS</a>
+              <a href="<?php echo base_url('inquiry/finance_details/'.$inquiry->financing_id) ?>" class="btn btn-success btn-block">VIEW DETAILS</a>
             </td>
           </tr>
         <?php endforeach; ?>
