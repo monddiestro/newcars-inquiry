@@ -15,7 +15,7 @@ class Financing extends CI_Controller
   function push_initial() {
 
     $name = $this->input->post('name');
-    $eadd = $this->input->post('eadd')
+    $eadd = $this->input->post('eadd');
     $contact = $this->input->post('contact');
 
     $data = array (
