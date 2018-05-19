@@ -84,7 +84,7 @@ class Financing extends CI_Controller
       'bday' => $bday,
       'gender' => $gender,
       'citizenship' => $citizenship,
-      'dependants' => $dependants,
+      'dependant' => $dependants,
       'address'  => $address,
     );
 
