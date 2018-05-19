@@ -67,7 +67,7 @@ class Financing extends CI_Controller
       'bank' => $bank
     );
 
-    $this->load->model('finacing_model');
+    $this->load->model('financing_model');
     $this->financing_model->push_update($data,$id);
 
   }
@@ -88,7 +88,7 @@ class Financing extends CI_Controller
       'address'  => $address,
     );
 
-    $this->load->model('finacing_model');
+    $this->load->model('financing_model');
     $this->financing_model->push_update($data,$id);
 
   }
