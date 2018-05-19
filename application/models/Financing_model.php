@@ -20,6 +20,10 @@ class Financing_model extends CI_Model
     $this->db->update('financing_tbl');
   }
 
+  function pull_from_db() {
+    $query = $this->db->get('financing_tbl');
+    return $query->result();
+  }
 
 
 }
