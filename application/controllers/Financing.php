@@ -22,6 +22,7 @@ class Financing extends CI_Controller
       'name' => $name,
       'eadd' => $eadd,
       'contact' => $contact,
+      'date' => date('Y-m-d H:i:s')
     );
 
     $this->load->model('financing_model');
