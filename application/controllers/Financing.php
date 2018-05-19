@@ -49,7 +49,7 @@ class Financing extends CI_Controller
       'loan'  => $loan,
     );
 
-    $this->load->model('finacing_model');
+    $this->load->model('financing_model');
     $this->financing_model->push_update($data,$id);
 
   }
