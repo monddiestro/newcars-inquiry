@@ -95,7 +95,7 @@ class Financing extends CI_Controller
 
   function pull_data() {
 
-    $this->load->model('inquiry_model');
+    $this->load->model('financing_model');
     $data["inquiries"] = $this->financing_model->pull_from_db();
 
     $this->load->view('head');
