@@ -59,7 +59,7 @@ class Financing extends CI_Controller
     $id = $this->input->post('financing_id');
     $income = $this->input->post('income');
     $expense = $this->input->post('expense');
-    $bank = $$this->input->post('bank');
+    $bank = $this->input->post('bank');
 
     $data = array(
       'income' => $income,
