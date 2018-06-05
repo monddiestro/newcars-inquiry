@@ -17,7 +17,7 @@
         <tbody>
         <?php foreach ($inquiries as $inquiry): ?>
           <tr>
-            <td><?php echo ucwords($inquiry->lname) . ", " . ucwords($inquiry->fname); ?></td>
+            <td><?php echo ucwords($inquiry->name); ?></td>
             <td><?php echo $inquiry->contact; ?></td>
             <td><?php echo $inquiry->eadd; ?></td>
             <td><?php echo $inquiry->time_call; ?></td>
