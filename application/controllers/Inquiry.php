@@ -13,8 +13,6 @@ class Inquiry extends CI_Controller
   }
 
   function push_data(){
-
-    $lname = $this->input->post('lname');
     $fname = $this->input->post('fname');
     $contact = $this->input->post('contact');
     $eadd = $this->input->post('eadd');
@@ -28,8 +26,7 @@ class Inquiry extends CI_Controller
     $source  = $this->input->post('source');
 
     $data = array(
-      'lname' => $lname,
-      'fname' => $fname,
+      'name' => $fname,
       'contact' => $contact,
       'eadd' => $eadd,
       'address' => $address,
