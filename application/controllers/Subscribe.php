@@ -29,7 +29,7 @@ class Subscribe extends CI_Controller
     $this->subscribe_model->save_data($data);
 
     $subject = "New Cars Showroom Email Subscriber";
-    $htmlbody = "Good day! Please add this email(". $email .") for our newsletter<br/>Thanks!"
+    $htmlbody = "Good day! Please add this email(". $email .") for our newsletter<br/>Thanks!";
     $recipient = "cj.tria@carmudi.com.ph";
     $sender = "reymond.diestro@carmudi.com.ph";
     $this->aws->sendMailUsingSES($subject,$htmlbody,$recipient,$sender);
