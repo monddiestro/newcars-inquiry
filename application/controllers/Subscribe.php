@@ -10,12 +10,15 @@ class Subscribe extends CI_Controller
     header('Access-Control-Allow-Origin: *');
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     parent::__construct();
-    $this->load->model('subscribe_model');
-    $this->load->library('aws');
+
   }
 
 
   function push_data() {
+
+    $this->load->model('subscribe_model');
+    $this->load->library('aws');
+
     $email = $this->input->post('eadd');
 
     $data = array(
