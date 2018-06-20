@@ -42,13 +42,13 @@
             <td><?php echo $inquiry->amount; ?></td>
             <td><?php echo $inquiry->emp_status; ?></td>
             <td><?php echo $inquiry->income; ?></td>
-            <td><?php echo $inquiry->expense; ?></td>
+            <td><?php echo $inquiry->expenses; ?></td>
             <td><?php echo $inquiry->bank_rel; ?></td>
             <td><?php echo $inquiry->gender; ?></td>
             <td><?php echo $inquiry->bday; ?></td>
             <td><?php echo $inquiry->citizenship; ?></td>
             <td><?php echo $inquiry->dependents; ?></td>
-            <td><?php echo $inquiry->address; ?></td>\
+            <td><?php echo $inquiry->address; ?></td>
             <td><?php echo $inquiry->time_call; ?></td>
             <td><?php echo $inquiry->date; ?></td>
           </tr>
