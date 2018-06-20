@@ -20,7 +20,7 @@ class Financing extends CI_Controller
 
     $data = array (
       'name' => $name,
-      'eadd' => $eadd,
+      'email' => $eadd,
       'contact' => $contact,
       'date' => date('Y-m-d H:i:s')
     );
