@@ -66,7 +66,7 @@ class Financing extends CI_Controller
 
     $data = array(
       'income' => $income,
-      'expense' => $expense,
+      'expenses' => $expense,
       'bank' => $bank,
       'emp_status' => $emp_stat
     );
