@@ -21,6 +21,7 @@ class Financing_model extends CI_Model
   }
 
   function pull_from_db() {
+    $this->db->order_by('date','desc');
     $query = $this->db->get('financing_tbl');
     return $query->result();
   }
