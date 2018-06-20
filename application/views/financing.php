@@ -63,7 +63,14 @@
             <td><?php echo $inquiry->citizenship; ?></td>
             <td><?php echo $inquiry->dependents; ?></td>
             <td><?php echo $inquiry->address; ?></td>
-            <td><?php echo $inquiry->time_call; ?></td>
+            <?php
+              $time = explode(";",$inquiry->time_call);
+            ?>
+            <td>
+              <?php foreach ($time as $value): ?>
+              <?php echo $value . "<br/>" ?>
+              <?php endforeach; ?>
+            </td>
             <td><?php echo date("Y-m-d",strtotime($inquiry->date)); ?></td>
           </tr>
         <?php endforeach; ?>
