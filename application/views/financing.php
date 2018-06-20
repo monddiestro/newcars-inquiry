@@ -1,7 +1,7 @@
 <div class="container-fluid m-t-100">
   <div class="row">
     <div class="col-sm-12">
-      <table class="table table-bordered">
+      <table class="table table-bordered" style="font-size:12px;">
         <thead>
           <tr>
             <th>Name</th>
