@@ -37,6 +37,7 @@ class Financing extends CI_Controller
     $price = $this->input->post('price');
     $type = $this->input->post('type');
     $downpayment = $this->input->post('downpayment');
+    $purpose = $this->input->post('loan_purpose');
     $term = $this->input->post('term');
     $loan  = $this->input->post('loan');
 
@@ -46,7 +47,8 @@ class Financing extends CI_Controller
       'type' => $type,
       'downpayment' => $downpayment,
       'term' => $term,
-      'loan'  => $loan,
+      'purpose' => $purpose,
+      'amount'  => $loan,
     );
 
     $this->load->model('financing_model');
@@ -60,11 +62,13 @@ class Financing extends CI_Controller
     $income = $this->input->post('income');
     $expense = $this->input->post('expense');
     $bank = $this->input->post('bank');
+    $emp_stat = $this->input->post('emp_stat');
 
     $data = array(
       'income' => $income,
       'expense' => $expense,
-      'bank' => $bank
+      'bank' => $bank,
+      'emp_status' => $emp_stat
     );
 
     $this->load->model('financing_model');
@@ -77,15 +81,17 @@ class Financing extends CI_Controller
     $bday = $this->input->post('bday');
     $gender = $this->input->post('gender');
     $citizenship = $this->input->post('citizenship');
-    $dependants = $this->input->post('dependants');
+    $dependants = $this->input->post('dependents');
+    $time_call = $this->input->post('time_call');
     $address  = $this->input->post('address');
 
     $data = array(
       'bday' => $bday,
       'gender' => $gender,
       'citizenship' => $citizenship,
-      'dependant' => $dependants,
+      'dependents' => $dependants,
       'address'  => $address,
+      'time_call' => $time_call
     );
 
     $this->load->model('financing_model');
