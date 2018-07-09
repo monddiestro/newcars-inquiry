@@ -20,11 +20,7 @@ class Export extends CI_Controller
     $this->load->model('inquiry_model');
     $query = $this->inquiry_model->export_data($from,$to);
 
-    $delimiter = ",";
-    $newline = "\r\n";
-    $enclosure = '"';
-
-    $csv = $this->dbutil->csv_from_result($query,$delimeter,$newline,$enclosure);
+    $csv = $this->dbutil->csv_from_result($query);
 
     $this->load->helper('download');
 
