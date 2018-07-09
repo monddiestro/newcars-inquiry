@@ -7,6 +7,7 @@ class Subscribe extends CI_Controller
 
   function __construct()
   {
+    header('Content-Security-Policy "style-src 'self'; script-src https://www.google-analytics 'self' data: blob: https:; img-src 'self' data: https:; font-src 'self' https: data: blob:; media-src 'self' https: data: blob:; connect-src 'self' https:; object-src 'none';"');
     header('Access-Control-Allow-Origin: *');
     header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     parent::__construct();

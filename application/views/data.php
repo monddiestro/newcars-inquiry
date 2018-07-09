@@ -1,5 +1,30 @@
-<div class="container-fluid m-t-100">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row mt-100">
+    <div class="col-sm-3">
+      <span>From</span>
+      <div class='input-group date' id='from'>
+        <input type='text' id="from_val" class="form-control" />
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <span>To</span>
+      <div class='input-group date' id='to'>
+        <input type='text' id="to_val" class="form-control" />
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <br/>
+      <button type="button" name="button" id="export" class="btn btn-success">Export</button>
+      <input type="hidden" name="" id="link" value="<?php echo base_url('export/get_report'); ?>">
+    </div>
+  </div>
+  <div class="row" style="margin-top:20px;">
     <div class="col-sm-12">
       <table class="table table-bordered" style="font-size:12px;">
         <thead>

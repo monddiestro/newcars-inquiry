@@ -24,4 +24,8 @@ class Inquiry_model extends CI_Model
     return $query->result();
   }
 
+  function export_data($from,$to){
+    return $this->db->query("select * from inquiry_tbl where date_format(date,'%Y-%m-%d') >= '".$from."' and date_format(date,'%Y-%m-%d') <= '".$to."';");
+  }
+
 }

@@ -5,14 +5,16 @@
 class Inquiry extends CI_Controller
 {
 
-  function __construct()
-  {
-    header('Access-Control-Allow-Origin: *');
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
-    parent::__construct();
-  }
+  // function __construct()
+  // {
+  //   header('Access-Control-Allow-Origin: *');
+  //   header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+  //   parent::__construct();
+  // }
 
   function push_data(){
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
     $fname = $this->input->post('fname');
     $contact = $this->input->post('contact');
     $eadd = $this->input->post('eadd');
