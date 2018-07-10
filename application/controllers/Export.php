@@ -46,14 +46,11 @@ class Export extends CI_Controller
 
     $csv = $this->dbutil->csv_from_result($query);
 
-    var_dump($csv);
+    $this->load->helper('download');
 
-
-    // $this->load->helper('download');
-    //
-    // $data = $csv;
-    // $name = 'financing-('.$from.')-('.$to.').csv';
-    // force_download($name, $data);
+    $data = $csv;
+    $name = 'financing-('.$from.')-('.$to.').csv';
+    force_download($name, $data);
 
   }
 

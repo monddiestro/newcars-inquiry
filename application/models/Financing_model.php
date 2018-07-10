@@ -26,7 +26,7 @@ class Financing_model extends CI_Model
     return $query->result();
   }
 
-  function export_data() {
+  function export_data($from,$to) {
       return $this->db->query("select * from financing_tbl where date_format(date,'%Y-%m-%d') >= '".$from."' and date_format(date,'%Y-%m-%d') <= '".$to."'");
   }
 }
