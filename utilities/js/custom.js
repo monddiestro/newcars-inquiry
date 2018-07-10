@@ -19,3 +19,12 @@ $('#export').on('click',function(){
   window.location.href = link+"?from="+from+"&to="+to;
 
 });
+
+$('#export_financing').on('click',function(){
+  var from = $('#from_val').val();
+  var to = $('#to_val').val();
+  var link = $('#link').val();
+
+  window.location.href = link+"?from="+from+"&to="+to;
+
+});
