@@ -49,7 +49,7 @@ class Export extends CI_Controller
     $this->load->helper('download');
 
     $data = $csv;
-    $name = 'report-date-('.$from.')-('.$to.').csv';
+    $name = 'financing-('.$from.')-('.$to.').csv';
     force_download($name, $data);
 
   }
