@@ -54,7 +54,11 @@ class Inquiry extends CI_Controller
 
     $this->load->view('head');
     $this->load->view('nav');
-    $this->load->view('data',$data);
+    if($this->session->has_userdata('login')) {
+      $this->load->view('data',$data);
+    } else {
+      $this->load->view('login');
+    }
     $this->load->view('script');
     $this->load->view('footer');
 
