@@ -1,7 +1,26 @@
+#set uri to excempt
+SetEnvIf Request_URI /newcars-inquiry/inquiry/push_data noauth=1
+SetEnvIf Request_URI /newcars-inquiry/financing/push_initial noauth=1
+SetEnvIf Request_URI /newcars-inquiry/financing/push_vehicle noauth=1
+SetEnvIf Request_URI /newcars-inquiry/financing/push_creditinfo noauth=1
+SetEnvIf Request_URI /newcars-inquiry/financing/push_personal noauth=1
+SetEnvIf Request_URI /newcars-inquiry/subscribe/push_data noauth=1
+
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /var/www/html/sara/newcars-inquiry/.htpasswd
+<RequireAny>
+  Require env noauth
+  Require env REDIRECT_noauth
+  Require valid-user
+</RequireAny>
+
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php/$1 [L]
+
 <IfModule mod_headers.c>
 
     Header set Content-Security-Policy "script-src 'self'; object-src 'self'"
