@@ -102,7 +102,21 @@ class Financing extends CI_Controller
   function pull_data() {
 
     $this->load->model('financing_model');
-    $data["inquiries"] = $this->financing_model->pull_from_db();
+  
+    $page = $this->uri->segment(3);
+
+    $page = empty($page) ? 0 : $page;
+
+    $limit = 50;
+    $offset = 0;
+    if($page > 1) {
+      $offset = ($page -1) * 50;
+    }
+
+    echo $lead_cnt = $this->financing_model->pull_count();
+    
+    $data["inquiries"] = $this->financing_model->pull_from_db($offset,$limit);
+    $data["pagination"] = $this->pagination($this->financing_model->pull_count());
 
     $this->load->view('head');
     $this->load->view('nav');
@@ -113,6 +127,33 @@ class Financing extends CI_Controller
     }
     $this->load->view('script');
     $this->load->view('footer');
+
+  }
+
+  function pagination($lead_cnt) {
+    $config["base_url"] = base_url('financing/pull_data/');
+    $config["total_rows"] = $lead_cnt;
+    $config["per_page"] = 50;
+    $config['num_links'] = 3;
+    $config['attributes'] = array('class' => 'page-link');
+    $config['use_page_numbers'] = TRUE;
+    $config['full_tag_open'] = '<nav aria-label="Page navigation"><ul class="pagination justify-content-end">';
+    $config['full_tag_close'] = '</ul></nav>';
+    $config['first_link'] = FALSE;
+    $config['last_link'] = FALSE;
+    $config['next_link'] = 'Next <i class="fa fa-chevron-right fa-fw ml-2 text-secondary fs-sm"></i>';
+    $config['next_tag_open'] = '<li class="page-item">';
+    $config['next_tag_close'] = '</li>';
+    $config['prev_link'] = '<i class="fa fa-chevron-left grey mr-2 fs-sm"></i> Previous';
+    $config['prev_tag_open'] = '<li class="page-item">';
+    $config['prev_tag_close'] = '</li>';
+    $config['cur_tag_open'] = '<li class="page-item active"><a class="page-link">';
+    $config['cur_tag_close'] = '</a></li>';
+    $config['num_tag_open'] = '<li class="page-item">';
+    $config['num_tag_close'] = '</li>';
+
+    $this->pagination->initialize($config);
+    return $this->pagination->create_links();
 
   }
 

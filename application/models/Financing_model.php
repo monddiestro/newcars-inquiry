@@ -20,7 +20,8 @@ class Financing_model extends CI_Model
     $this->db->update('financing_tbl');
   }
 
-  function pull_from_db() {
+  function pull_from_db($offset,$limit) {
+    $this->db->limit($limit,$offset);
     $this->db->order_by('date','desc');
     $query = $this->db->get('financing_tbl');
     return $query->result();
@@ -28,5 +29,10 @@ class Financing_model extends CI_Model
 
   function export_data($from,$to) {
       return $this->db->query("select * from financing_tbl where date_format(date,'%Y-%m-%d') >= '".$from."' and date_format(date,'%Y-%m-%d') <= '".$to."'");
+  }
+
+  function pull_count() {
+    $query = $this->db->count_all('financing_tbl');
+    return $query;
   }
 }

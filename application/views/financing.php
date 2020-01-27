@@ -103,4 +103,9 @@
       </table>
     </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12 text-right">
+      <?php echo $pagination; ?>
+    </div>
+  </div>
 </div>
