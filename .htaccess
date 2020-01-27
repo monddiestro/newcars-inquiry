@@ -6,14 +6,14 @@ SetEnvIf Request_URI /newcars-inquiry/financing/push_creditinfo noauth=1
 SetEnvIf Request_URI /newcars-inquiry/financing/push_personal noauth=1
 SetEnvIf Request_URI /newcars-inquiry/subscribe/push_data noauth=1
 
-# AuthType Basic
-# AuthName "Restricted Content"
-# AuthUserFile /var/www/html/sara/newcars-inquiry/.htpasswd
-#<RequireAny>
-#  Require env noauth
-#  Require env REDIRECT_noauth
-#  Require valid-user
-# </RequireAny>
+AuthType Basic
+AuthName "Restricted Content"
+AuthUserFile /var/www/html/sara/newcars-inquiry/.htpasswd
+<RequireAny>
+    Require env noauth
+    Require env REDIRECT_noauth
+    Require valid-user
+</RequireAny>
 
 
 RewriteEngine On
