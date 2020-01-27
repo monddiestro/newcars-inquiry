@@ -67,36 +67,7 @@
             <td><?php echo $inquiry->amount; ?></td>
             <td><?php echo $inquiry->emp_status; ?></td>
             <td><?php echo $inquiry->income; ?></td>
-            <?php
-              $expenses = explode(";",$inquiry->expenses);
-            ?>
-            <td>
-              <?php foreach ($expenses as $value): ?>
-              <?php echo $value . "<br/>" ?>
-              <?php endforeach; ?>
-            </td>
-            <?php
-              $banks = explode(";",$inquiry->bank_rel);
-            ?>
-            <td>
-              <?php foreach ($banks as $value): ?>
-              <?php echo $value . "<br/>" ?>
-              <?php endforeach; ?>
-            </td>
-            <td><?php echo $inquiry->gender; ?></td>
-            <td><?php echo date("Y-m-d",strtotime($inquiry->bday)); ?></td>
-            <td><?php echo $inquiry->citizenship; ?></td>
-            <td><?php echo $inquiry->dependents; ?></td>
-            <td><?php echo $inquiry->address; ?></td>
-            <?php
-              $time = explode(";",$inquiry->time_call);
-            ?>
-            <td>
-              <?php foreach ($time as $value): ?>
-              <?php echo $value . "<br/>" ?>
-              <?php endforeach; ?>
-            </td>
-            <td><?php echo date("Y-m-d",strtotime($inquiry->date)); ?></td>
+            
           </tr>
         <?php endforeach; ?>
       </tbody>
